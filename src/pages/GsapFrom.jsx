@@ -1,5 +1,18 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 const GsapFrom = () => {
   // TODO: Implement the gsap.from() method
+  useGSAP(() => {
+    gsap.from("#green-box", {
+      x: 500,
+      repeat: -1,
+      yoyo: true,
+      rotation: 360,
+      duration: 2,
+      ease: "power1.inOut",
+    });
+  }, []);
 
   return (
     <main>
@@ -23,8 +36,7 @@ const GsapFrom = () => {
         <a
           href="https://greensock.com/docs/v3/GSAP/gsap.from()"
           target="_blank"
-          rel="noreferrer noopener nofollow"
-        >
+          rel="noreferrer noopener nofollow">
           gsap.from()
         </a>{" "}
         method.
